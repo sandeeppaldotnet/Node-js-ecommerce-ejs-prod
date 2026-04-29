@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+<div class="row">
+  <div class="col-md-4">
+    <img src="<%= product.image %>" class="img-fluid">
+  </div>
+  <div class="col-md-8">
+    <h3><%= product.title %></h3>
+    <p><%= product.description %></p>
+    <h4>$<%= product.price %></h4>
+    <form method="POST" action="/add-to-cart">
+      <input type="hidden" name="id" value="<%= product.id %>">
+      <input type="hidden" name="title" value="<%= product.title %>">
+      <input type="hidden" name="price" value="<%= product.price %>">
+      <input type="hidden" name="image" value="<%= product.image %>">
+      <button class="btn btn-success">Add to Cart</button>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') %>

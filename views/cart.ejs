@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<h3>Your Cart</h3>
+<table class="table">
+<thead><tr><th>Item</th><th>Price</th><th>Action</th></tr></thead>
+<tbody>
+<% let total=0; %>
+<% cart.forEach((item,i)=>{ total+=Number(item.price); %>
+<tr>
+<td><%= item.title %></td>
+<td>$<%= item.price %></td>
+<td><a href="/remove/<%= i %>" class="btn btn-danger btn-sm">Remove</a></td>
+</tr>
+<% }) %>
+</tbody>
+</table>
+<h4>Total: $<%= total.toFixed(2) %></h4>
+<%- include('partials/footer') %>

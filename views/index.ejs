@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="row">
+  <% products.forEach(p => { %>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow">
+        <img src="<%= p.image %>" class="card-img-top" height="200">
+        <div class="card-body">
+          <h6><%= p.title.substring(0,40) %></h6>
+          <p>$<%= p.price %></p>
+          <a href="/product/<%= p.id %>" class="btn btn-primary btn-sm">View</a>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<%- include('partials/footer') %>
